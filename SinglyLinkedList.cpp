@@ -225,15 +225,51 @@ class List {
 
 
 int main() {
-
 	List myList;
+
+	cout << "=== Insertion ===" << endl;
 	myList.insert(10);
 	myList.insert(20);
 	myList.insert(30);
-
-
-
-	
+	myList.insertAtBeginning(5);
+	myList.insertAtAnyPosition(15, 2);
 	myList.display();
 
+	cout << "\n=== Search ===" << endl;
+	cout << (myList.search(20) ? "20 found" : "20 not found") << endl;
+	cout << (myList.search(99) ? "99 found" : "99 not found") << endl;
+
+	cout << "\n=== Count ===" << endl;
+	cout << "Total nodes: " << myList.countNodes() << endl;
+
+	cout << "\n=== Deletion ===" << endl;
+	myList.deleteFromStart();
+	myList.display();
+
+	myList.deleteFromEnd();
+	myList.display();
+
+	myList.deleteAtAnyPosition(1);
+	myList.display();
+
+	myList.deleteByValue(15);
+	myList.display();
+
+	cout << "\n=== Reverse ===" << endl;
+	myList.insert(40);
+	myList.insert(50);
+	myList.display();
+	myList.reverse();
+	myList.display();
+
+	cout << "\n=== Sort ===" << endl;
+	myList.insert(25);
+	myList.insert(5);
+	myList.display();
+	myList.sort();
+	myList.display();
+
+
+
+	return 0;
 }
